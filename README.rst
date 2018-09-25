@@ -22,7 +22,8 @@ annealing data in various 4 conditions (01h or 18h icubations at 25C or 37C).
 Tatapov provides these tables (it will download them automatically from Arxiv
 on the first use) as Pandas dataframes, so that they are easy to manipulate.
 
-It also provides simple methods to build and plot subsets of the data. 
+It also provides simple methods to build and plot subsets of the data (plotting
+requires Matplotlib installed). 
 
 Usage Example
 -------------
