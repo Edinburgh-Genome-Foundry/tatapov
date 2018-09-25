@@ -7,7 +7,7 @@ before_install:
   - pip install -e .
 # command to run tests
 script:
-  - python -m pytest -v --cov saboteurs --cov-report term-missing
+  - python -m pytest -v --cov tatapov --cov-report term-missing
 
 after_success:
   - coveralls
