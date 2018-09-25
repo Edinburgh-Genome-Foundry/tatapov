@@ -5,9 +5,6 @@ import appdirs
 import pandas
 import flametree
 
-DATA_URL = ("https://www.biorxiv.org/highwire/filestream/98810/"
-            "field_highwire_adjunct_files/1/322297-2.zip")
-
 DATA_FILES = {
     "25C": {
         "01h": "FileS1_01h_25C.xlsx",
@@ -31,19 +28,20 @@ def list_missing_files():
                   if not os.path.exists(os.path.join(DATA_PATH, fname))]
 
 def download_missing_files():
-    response = urllib.request.urlopen(DATA_URL)
+    response = urllib.request.urlopen(
+        "https://www.biorxiv.org/highwire/filestream/98810/"
+        "field_highwire_adjunct_files/1/322297-2.zip")
     zip_root = flametree.file_tree(response.read())
     data_root = flametree.file_tree(DATA_PATH)
     for fname in missing_files:
         zip_root[fname].copy(data_root._file(fname))
 
+# This should only run once, at first use, to download the data files
 missing_files = list_missing_files()
-
 if missing_files != []:
     print ("Downloading missing data files for tatapov...", end=" ")
     download_missing_files()
     print ("Done.")
-
 assert list_missing_files() == []
 
 
