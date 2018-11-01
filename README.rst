@@ -46,6 +46,11 @@ Usage Example
 
 .. image:: https://i.imgur.com/MfLimEk.png
 
+In the plot above, if you see anything else than the square pairs around the
+diagonal, it means there is cross-talking between your overhangs (so risk of misannealing).
+If one of these diagmonal square pairs appears lighter than the others, it means that
+the corresponding overhang has weak self-annealing (risk of having no assembly).
+
 
 **Identifying weak self-annealing overhangs**
 
@@ -74,7 +79,7 @@ Usage Example
 
     # Compute a dictionary {overhang_pair: cross-talking score in 0-1}
     cross_annealings = tatapov.cross_annealings(annealing_data)
-    
+
     high_cross_annealing_pairs = [
         overhang_pair
         for overhang_pair, cross_annealing in cross_annealings.items()
