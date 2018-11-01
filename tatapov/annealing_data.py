@@ -20,7 +20,7 @@ DATA_PATH = os.environ.get('TATAPOV_DATA_DIR',
                            os.path.join(appdirs.user_data_dir(), 'tatapov'))
 
 if not os.path.exists(DATA_PATH):
-    os.mkdir(DATA_PATH)
+    os.makedirs(DATA_PATH)
 
 def list_missing_files():
     return [fname for data in DATA_FILES.values()
