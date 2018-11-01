@@ -28,13 +28,58 @@ requires Matplotlib installed).
 Usage Example
 -------------
 
+**Plotting **
+
 .. code:: python
 
+  import tatapov
+
+  # Get a subset of the data at 25C (1h incubation)
   data = tatapov.annealing_data["25C"]["01h"] # a pandas dataframe
-  subset = tatapov.data_subset(data, ["ACGA", "AAAT", "AGAG"], add_reverse=True)
+  overhangs = ["ACGA", "AAAT", "AGAG"]
+  subset = tatapov.data_subset(data, overhangs, add_reverse=True)
+
+  # Plot the data subset
   ax, _ = tatapov.plot_data(subset, figwidth=5)
   ax.figure.tight_layout()
   ax.figure.savefig("example.png")
+
+.. image:: https://imgur.com/MfLimEk
+
+
+**Identifying weak self-annealing overhangs**
+
+.. code:: python
+
+    import tatapov
+
+    annealing_data = tatapov.annealing_data['37C']['01h']
+
+    # Compute a dictionary {overhang: self-annealing score}
+    relative_self_annealing = tatapov.relative_self_annealings(annealing_data)
+
+    weak_self_annealing_overhangs = [
+        overhang
+        for overhang, self_annealing in relative_self_annealing.items()
+        if self_annealing < 0.4
+    ]
+
+**Identifying overhang pairs with significant cross-talking**
+
+.. code:: python
+
+    import tatapov
+
+    annealing_data = tatapov.annealing_data['37C']['01h']
+
+    # Compute a dictionary {overhang: self-annealing score}
+    cross_annealings = tatapov.cross_annealings(annealing_data)
+    high_cross_annealing_pairs = [
+        overhang_pair
+        for overhang_pair, cross_annealing in cross_annealings.items()
+        if cross_annealing > 0.08
+    ]
+    high_cross_annealing_pairs
 
 Installation
 -------------

@@ -9,6 +9,7 @@ setup(
     name='tatapov',
     version=__version__,
     author='Zulko',
+    url='https://github.com/Edinburgh-Genome-Foundry/tatapov',
     description='Provides DNA overhang misannealing data (Potatov 2018).',
     long_description=open('README.rst').read(),
     license='see LICENSE.txt',
