@@ -44,7 +44,7 @@ Usage Example
   ax.figure.tight_layout()
   ax.figure.savefig("example.png")
 
-.. image:: https://imgur.com/MfLimEk
+.. image:: https://i.imgur.com/MfLimEk.png
 
 
 **Identifying weak self-annealing overhangs**
