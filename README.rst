@@ -28,7 +28,7 @@ requires Matplotlib installed).
 Usage Example
 -------------
 
-**Plotting **
+**Plotting**
 
 .. code:: python
 
@@ -55,7 +55,7 @@ Usage Example
 
     annealing_data = tatapov.annealing_data['37C']['01h']
 
-    # Compute a dictionary {overhang: self-annealing score}
+    # Compute a dictionary {overhang: self-annealing score in 0-1}
     relative_self_annealing = tatapov.relative_self_annealings(annealing_data)
 
     weak_self_annealing_overhangs = [
@@ -72,14 +72,14 @@ Usage Example
 
     annealing_data = tatapov.annealing_data['37C']['01h']
 
-    # Compute a dictionary {overhang: self-annealing score}
+    # Compute a dictionary {overhang_pair: cross-talking score in 0-1}
     cross_annealings = tatapov.cross_annealings(annealing_data)
+    
     high_cross_annealing_pairs = [
         overhang_pair
         for overhang_pair, cross_annealing in cross_annealings.items()
         if cross_annealing > 0.08
     ]
-    high_cross_annealing_pairs
 
 Installation
 -------------
