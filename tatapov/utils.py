@@ -95,7 +95,7 @@ def plot_data(df, ax=None, colorbar=True, figwidth=None):
     ax.set_xticks(range(len(xtick_labels) + 1))
     ax.set_xticklabels(xtick_labels, rotation=90)
     ax.xaxis.tick_top()
-    ax.set_xlim(xmax=len(xtick_labels) - .5)
+    ax.set_xlim(right=len(xtick_labels) - .5)
     
     ytick_labels = df.index[::-1]
     ax.set_yticks(range(len(ytick_labels) + 1))
