@@ -40,8 +40,11 @@ def download_missing_files():
 missing_files = list_missing_files()
 if missing_files != []:
     print ("Downloading missing data files for tatapov...", end=" ")
-    download_missing_files()
-    print ("Done.")
+    try:
+        download_missing_files()
+        print ("Done.")
+    except urllib.request.HTTPError:
+        print ("Warning: unable to download data files for Tatapov")
 assert list_missing_files() == []
 
 
