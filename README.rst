@@ -10,7 +10,7 @@ overhang misannealing data from the following paper
 (`available on arxiv <https://www.biorxiv.org/content/early/2018/05/15/322297>`_):
 
 *Optimization of Golden Gate assembly through application of ligation
-sequence-dependent fidelity and bias profiling*, Potapov Vladimir,
+sequence-dependent fidelity and bias profiling*, Vladimir Potapov,
 Jennifer L. Ong, Rebecca B. Kucera, Bradley W. Langhorst,
 Katharina Bilotti, John M. Pryor, Eric J. Cantor, Barry Canton,
 Thomas F. Knight, Thomas C. Evans Jr., Gregory Lohman. May 2018,
@@ -18,7 +18,7 @@ https://doi.org/10.1101/322297
 
 
 The Supplementary Material of this paper provides tables of inter-overhang
-annealing data in various 4 conditions (01h or 18h icubations at 25C or 37C).
+annealing data in various 4 conditions (01h or 18h incubations at 25C or 37C).
 Tatapov provides these tables (it will download them automatically from Arxiv
 on the first use) as Pandas dataframes, so that they are easy to manipulate.
 
@@ -48,8 +48,9 @@ Usage Example
 
 In the plot above, if you see anything else than the square pairs around the
 diagonal, it means there is cross-talking between your overhangs (so risk of misannealing).
-If one of these diagmonal square pairs appears lighter than the others, it means that
-the corresponding overhang has weak self-annealing (risk of having no assembly).
+If one of these diagonal square pairs appears lighter than the others, it means that
+the corresponding overhang has weak self-annealing (risk of having no assembly). 
+A color square in the diagonal means that the overhang can anneal with itself (palindromic).
 
 
 **Identifying weak self-annealing overhangs**
@@ -106,8 +107,8 @@ License = MIT
 
 Tatapov is an open-source software originally written at the Edinburgh Genome
 Foundry by `Zulko <https://github.com/Zulko>`_ and
-`released on Github <https://github.com/Edinburgh-Genome-Foundry/Primavera>`_
-under the MIT licence (¢ Edinburg Genome Foundry). Everyone is welcome
+`released on Github <https://github.com/Edinburgh-Genome-Foundry/tatapov>`_
+under the MIT licence (Copyright 2018 Edinburgh Genome Foundry). Everyone is welcome
 to contribute !
 
 Please contact us if there is any issue regarding copyright (there shouldn't be
