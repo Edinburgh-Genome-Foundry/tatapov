@@ -5,6 +5,10 @@ Tatapov
    :target: https://travis-ci.org/Edinburgh-Genome-Foundry/tatapov
    :alt: Travis CI build status
 
+.. image:: https://coveralls.io/repos/github/Edinburgh-Genome-Foundry/tatapov/badge.svg?branch=master
+   :target: https://coveralls.io/github/Edinburgh-Genome-Foundry/tatapov?branch=master
+
+
 Tatapov is a Python library making accessible and easy to explore the DNA
 overhang misannealing data from the following paper
 (`available on arxiv <https://www.biorxiv.org/content/early/2018/05/15/322297>`_):
@@ -88,9 +92,9 @@ A color square in the diagonal means that the overhang can anneal with itself (p
     ]
 
 Installation
--------------
+------------
 
-You can install Tatapov through PIP
+You can install Tatapov through PIP:
 
 .. code::
 
@@ -103,7 +107,7 @@ Alternatively, you can unzip the sources in a folder and type
     sudo python setup.py install
 
 License = MIT
---------------
+-------------
 
 Tatapov is an open-source software originally written at the Edinburgh Genome
 Foundry by `Zulko <https://github.com/Zulko>`_ and
@@ -116,7 +120,7 @@ as the repository does not contain any data, and the paper data is free to
 download).
 
 More biology software
------------------------
+---------------------
 
 .. image:: https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/Edinburgh-Genome-Foundry.github.io/master/static/imgs/logos/egf-codon-horizontal.png
  :target: https://edinburgh-genome-foundry.github.io/
