@@ -7,7 +7,14 @@ import flametree
 
 DATA_FILES = {
     "25C": {"01h": "FileS1_01h_25C.xlsx", "18h": "FileS3_18h_25C.xlsx"},
-    "37C": {"01h": "FileS2_01h_37C.xlsx", "18h": "FileS4_18h_37C.xlsx",},
+    "37C": {
+        "01h": "FileS2_01h_37C.xlsx",
+        "18h": "FileS4_18h_37C.xlsx",
+        "2020_01h_BsaI": "pone.0238592.s001.xlsx",
+        "2020_01h_BsmBI": "pone.0238592.s002.xlsx",
+        "2020_01h_Esp3I": "pone.0238592.s003.xlsx",
+        "2020_01h_BbsI": "pone.0238592.s004.xlsx",
+    },
 }
 
 DATA_PATH = os.environ.get(
@@ -28,6 +35,25 @@ def list_missing_files():
 
 
 def download_missing_files():
+    # 2020 PLoS One paper:
+    datafiles_2020 = [
+        "pone.0238592.s001.xlsx",
+        "pone.0238592.s002.xlsx",
+        "pone.0238592.s003.xlsx",
+        "pone.0238592.s004.xlsx",
+    ]
+
+    for datafile in datafiles_2020:
+        if datafile in missing_files:
+            link_fragment = datafile[:-5]  # remove extension
+            urllib.request.urlretrieve(
+                "https://doi.org/10.1371/journal." + link_fragment,
+                os.path.join(DATA_PATH, datafile),
+            )
+
+            missing_files.remove(datafile)  # loop below goes through all for 2018 data
+
+    # 2018 bioRxiv paper:
     response = urllib.request.urlopen(
         "https://www.biorxiv.org/highwire/filestream/98810/"
         "field_highwire_adjunct_files/1/322297-2.zip"

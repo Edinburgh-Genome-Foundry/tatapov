@@ -1,6 +1,8 @@
-<p align="center">
-<img alt="tatapov logo" title="tatapov" src="https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/tatapov/master/images/tatapov.png" width="140">
-</p>
+.. raw:: html
+
+    <p align="center">
+    <img alt="tatapov logo" title="tatapov" src="https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/tatapov/master/images/tatapov.png" width="140">
+    </p>
 
 
 Tatapov
@@ -15,20 +17,25 @@ Tatapov
 
 
 Tatapov is a Python library making accessible and easy to explore the DNA
-overhang misannealing data from the following paper
-(`available on bioRxiv <https://www.biorxiv.org/content/early/2018/05/15/322297>`_):
+overhang misannealing data from Potapov et al. (2018, `bioRxiv <https://www.biorxiv.org/content/early/2018/05/15/322297>`_) and Pryor et al. (2020, `PLoS ONE <https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0238592>`_):
 
 *Optimization of Golden Gate assembly through application of ligation
-sequence-dependent fidelity and bias profiling*, Vladimir Potapov,
+sequence-dependent fidelity and bias profiling.* Vladimir Potapov,
 Jennifer L. Ong, Rebecca B. Kucera, Bradley W. Langhorst,
 Katharina Bilotti, John M. Pryor, Eric J. Cantor, Barry Canton,
-Thomas F. Knight, Thomas C. Evans Jr., Gregory Lohman. May 2018,
+Thomas F. Knight, Thomas C. Evans Jr., Gregory Lohman. bioRxiv (2018)
 https://doi.org/10.1101/322297
 
 
-The Supplementary Material of this paper provides tables of inter-overhang
-annealing data in various 4 conditions (01h or 18h incubations at 25C or 37C).
-Tatapov provides these tables (it will download them automatically from bioRxiv
+*Enabling one-pot Golden Gate assemblies of unprecedented complexity using
+data-optimized assembly design.* John M. Pryor, Vladimir Potapov,
+Rebecca B. Kucera, Katharina Bilotti, Eric J. Cantor, Gregory J. S. Lohman.
+PLoS ONE (2020) 15(9): e0238592. https://doi.org/10.1371/journal.pone.0238592
+
+
+The Supplementary Material of these papers provide tables of inter-overhang
+annealing data in various conditions (01h or 18h incubations at 25C or 37C).
+Tatapov provides these tables (it will download them automatically
 upon first use) as pandas dataframes, so that they are easy to manipulate.
 
 It also provides simple methods to build and plot subsets of the data (plotting
@@ -45,7 +52,7 @@ Usage example
   import tatapov
 
   # Get a subset of the data at 25C (1h incubation)
-  data = tatapov.annealing_data["25C"]["01h"] # a pandas dataframe
+  data = tatapov.annealing_data["25C"]["01h"]  # a pandas dataframe
   overhangs = ["ACGA", "AAAT", "AGAG"]
   subset = tatapov.data_subset(data, overhangs, add_reverse=True)
 
@@ -54,14 +61,26 @@ Usage example
   ax.figure.tight_layout()
   ax.figure.savefig("example.png")
 
-.. image:: https://i.imgur.com/MfLimEk.png
+.. image:: https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/tatapov/master/images/tatapov_example.png
 
 In the plot above, if you see anything else than the square pairs around the
 diagonal, it means there is cross-talking between your overhangs (so risk of misannealing).
 If one of these diagonal square pairs appears lighter than the others, it means that
-the corresponding overhang has weak self-annealing (risk of having no assembly). 
+the corresponding overhang has weak self-annealing (risk of having no assembly).
 A color square in the diagonal means that the overhang can anneal with itself (palindromic).
 
+The following datasets are available (see the publications for more details):
+
+.. code:: python
+
+  # Potapov 2018:
+  tatapov.annealing_data[temperature][time]
+  # where temperature is '25C' or '37C', and time is '01h' or '18h'
+
+  # Pryor 2020 (all 01h):
+  tatapov.annealing_data['37C'][enzyme]
+  # where enzyme is one of:
+  # '2020_01h_BsaI', '2020_01h_BsmBI', '2020_01h_Esp3I' or '2020_01h_BbsI'
 
 **Identifying weak self-annealing overhangs**
 
@@ -132,6 +151,7 @@ More biology software
 ---------------------
 
 .. image:: https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/Edinburgh-Genome-Foundry.github.io/master/static/imgs/logos/egf-codon-horizontal.png
- :target: https://edinburgh-genome-foundry.github.io/
+  :target: https://edinburgh-genome-foundry.github.io/
 
-Tatapov is part of the `EGF Codons <https://edinburgh-genome-foundry.github.io/>`_ synthetic biology software suite for DNA design, manufacturing and validation.
+Tatapov is part of the `EGF Codons <https://edinburgh-genome-foundry.github.io/>`_
+synthetic biology software suite for DNA design, manufacturing and validation.
