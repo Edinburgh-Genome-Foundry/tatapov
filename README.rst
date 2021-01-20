@@ -1,3 +1,8 @@
+<p align="center">
+<img alt="tatapov logo" title="tatapov" src="https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/tatapov/master/images/tatapov.png" width="140">
+</p>
+
+
 Tatapov
 -------
 
@@ -11,7 +16,7 @@ Tatapov
 
 Tatapov is a Python library making accessible and easy to explore the DNA
 overhang misannealing data from the following paper
-(`available on arxiv <https://www.biorxiv.org/content/early/2018/05/15/322297>`_):
+(`available on bioRxiv <https://www.biorxiv.org/content/early/2018/05/15/322297>`_):
 
 *Optimization of Golden Gate assembly through application of ligation
 sequence-dependent fidelity and bias profiling*, Vladimir Potapov,
@@ -23,13 +28,14 @@ https://doi.org/10.1101/322297
 
 The Supplementary Material of this paper provides tables of inter-overhang
 annealing data in various 4 conditions (01h or 18h incubations at 25C or 37C).
-Tatapov provides these tables (it will download them automatically from Arxiv
-on the first use) as Pandas dataframes, so that they are easy to manipulate.
+Tatapov provides these tables (it will download them automatically from bioRxiv
+upon first use) as pandas dataframes, so that they are easy to manipulate.
 
 It also provides simple methods to build and plot subsets of the data (plotting
-requires Matplotlib installed). 
+requires Matplotlib installed).
 
-Usage Example
+
+Usage example
 -------------
 
 **Plotting**
@@ -91,6 +97,7 @@ A color square in the diagonal means that the overhang can anneal with itself (p
         if cross_annealing > 0.08
     ]
 
+
 Installation
 ------------
 
@@ -98,13 +105,14 @@ You can install Tatapov through PIP:
 
 .. code::
 
-    sudo pip install tatapov
+    pip install tatapov
 
 Alternatively, you can unzip the sources in a folder and type
 
 .. code::
 
-    sudo python setup.py install
+    python setup.py install
+
 
 License = MIT
 -------------
@@ -118,6 +126,7 @@ to contribute !
 Please contact us if there is any issue regarding copyright (there shouldn't be
 as the repository does not contain any data, and the paper data is free to
 download).
+
 
 More biology software
 ---------------------
