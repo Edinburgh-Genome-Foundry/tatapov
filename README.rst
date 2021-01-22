@@ -57,7 +57,7 @@ Usage example
   subset = tatapov.data_subset(data, overhangs, add_reverse=True)
 
   # Plot the data subset
-  ax, _ = tatapov.plot_data(subset, figwidth=5)
+  ax, _ = tatapov.plot_data(subset, figwidth=5, plot_color="Blues")
   ax.figure.tight_layout()
   ax.figure.savefig("example.png")
 
@@ -68,6 +68,7 @@ diagonal, it means there is cross-talking between your overhangs (so risk of mis
 If one of these diagonal square pairs appears lighter than the others, it means that
 the corresponding overhang has weak self-annealing (risk of having no assembly).
 A color square in the diagonal means that the overhang can anneal with itself (palindromic).
+The Matplotlib colormap is specified with the `plot_color` parameter.
 
 The following datasets are available (see the publications for more details):
 

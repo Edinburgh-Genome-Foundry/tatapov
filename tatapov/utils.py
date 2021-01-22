@@ -1,7 +1,5 @@
-import os
 from functools import lru_cache
 import itertools
-import pandas
 import numpy as np
 
 try:
@@ -49,10 +47,10 @@ def data_subset(dataframe, overhangs, add_reverse=True):
     dataframe
       One of the data sheets provided by tatapov, e.g.
       ``annealing_data["37C"]["01h"]``.
-    
+
     overhangs
       list of overhangs
-    
+
     add_reverse
       If True (recommended), the reverse-complements of the overhangs in the
       provided list will also be kept.
@@ -65,7 +63,7 @@ def data_subset(dataframe, overhangs, add_reverse=True):
     return dataframe[overhangs].loc[overhangs]
 
 
-def plot_data(df, ax=None, colorbar=True, figwidth=None):
+def plot_data(df, ax=None, colorbar=True, figwidth=None, plot_color="Blues"):
     """Plot a (restricted) tatapov dataframe. Requires matplotlib installed.
 
     Parameters
@@ -74,23 +72,26 @@ def plot_data(df, ax=None, colorbar=True, figwidth=None):
     df
       One of the data sheets provided by tatapov, e.g.
       ``annealing_data["37C"]["01h"]``. Or a restriction using ``data_subset``.
-    
+
     ax
       A Matplotlib ax. If none is provided, one will be created and returned
       at the end.
-    
+
     colorbar
       If True, the figure will have a colorbar.
-    
+
     figwidth
       Custom width of the figure (which will be square shaped).
+
+    plot_color
+      A Matplotlib colormap name.
     """
     if not MATPLOTLIB_AVAILABLE:
         raise ImportError("Install matplotlib to use this method.")
     if ax is None:
         _, ax = plt.subplots(1, figsize=(figwidth, figwidth) if figwidth else None)
     values = np.log10(np.maximum(0.5, df.values[::-1]))
-    im = ax.imshow(values, cmap="Blues")
+    im = ax.imshow(values, cmap=plot_color)
     if colorbar:
         ax.figure.colorbar(im, label="log10( occurrences )")
     for i in range(len(df)):
