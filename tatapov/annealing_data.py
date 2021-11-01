@@ -36,21 +36,21 @@ def list_missing_files():
 
 def download_missing_files():
     # 2020 PLoS One paper:
+    # An EGF repository was made for the data because weblinks are unreliable.
     datafiles_2020 = [
         "pone.0238592.s001.xlsx",
         "pone.0238592.s002.xlsx",
         "pone.0238592.s003.xlsx",
         "pone.0238592.s004.xlsx",
     ]
-
+    link = (
+        "https://github.com/Edinburgh-Genome-Foundry/tatapov_data/blob/main/pryor2021/"
+    )
     for datafile in datafiles_2020:
         if datafile in missing_files:
-            link_fragment = datafile[:-5]  # remove extension
             urllib.request.urlretrieve(
-                "https://doi.org/10.1371/journal." + link_fragment,
-                os.path.join(DATA_PATH, datafile),
-            )
-
+                link + datafile + "?raw=true", os.path.join(DATA_PATH, datafile),
+            )  # "?raw=true" ensures retrieving the file
             missing_files.remove(datafile)  # loop below goes through all for 2018 data
 
     # 2018 bioRxiv paper:
