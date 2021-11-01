@@ -50,18 +50,32 @@ def download_missing_files():
         if datafile in missing_files:
             urllib.request.urlretrieve(
                 link + datafile + "?raw=true", os.path.join(DATA_PATH, datafile),
-            )  # "?raw=true" ensures retrieving the file
+            )  # "?raw=true" ensures retrieving the file rather than the website
             missing_files.remove(datafile)  # loop below goes through all for 2018 data
 
     # 2018 bioRxiv paper:
-    response = urllib.request.urlopen(
-        "https://www.biorxiv.org/highwire/filestream/98810/"
-        "field_highwire_adjunct_files/1/322297-2.zip"
-    )
-    zip_root = flametree.file_tree(response.read())
-    data_root = flametree.file_tree(DATA_PATH)
-    for fname in missing_files:
-        zip_root[fname].copy(data_root._file(fname))
+    # Original link cannot be downloaded anymore:
+    # link = "https://www.biorxiv.org/highwire/filestream/98810/field_highwire_adjunct_files/1/322297-2.zip"
+    # response = urllib.request.urlopen(link)
+    # zip_root = flametree.file_tree(response.read())
+    # data_root = flametree.file_tree(DATA_PATH)
+    # for fname in missing_files:
+    #     zip_root[fname].copy(data_root._file(fname))
+
+    datafiles_2018 = [
+        "FileS1_01h_25C.xlsx",
+        "FileS3_18h_25C.xlsx",
+        "FileS2_01h_37C.xlsx",
+        "FileS4_18h_37C.xlsx",
+    ]
+    link = "https://github.com/Edinburgh-Genome-Foundry/tatapov_data/blob/main/potapov2018/"
+
+    for datafile in datafiles_2018:
+        if datafile in missing_files:
+            urllib.request.urlretrieve(
+                link + datafile + "?raw=true", os.path.join(DATA_PATH, datafile),
+            )
+            missing_files.remove(datafile)  # loop below goes through all for 2018 data
 
 
 # This should only run once, at first use, to download the data files
