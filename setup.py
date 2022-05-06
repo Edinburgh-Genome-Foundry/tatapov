@@ -12,7 +12,7 @@ setup(
     author="Zulko",
     url="https://github.com/Edinburgh-Genome-Foundry/tatapov",
     description="Provides DNA overhang misannealing data (Potapov 2018).",
-    long_description=open("README.rst").read(),
+    long_description=open("pypi-readme.rst").read(),
     license="MIT",
     keywords="overhang golden gate dna annealing mismatch potapov",
     packages=find_packages(exclude="docs"),
