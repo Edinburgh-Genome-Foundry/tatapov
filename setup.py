@@ -17,5 +17,5 @@ setup(
     keywords="overhang golden gate dna annealing mismatch potapov",
     packages=find_packages(exclude="docs"),
     include_package_data=True,
-    install_requires=["pandas", "appdirs", "flametree", "xlrd<2"],
+    install_requires=["pandas", "appdirs", "flametree", "openpyxl"],
 )

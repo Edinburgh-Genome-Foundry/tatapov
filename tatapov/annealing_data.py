@@ -94,7 +94,7 @@ try:
     annealing_data = {
         temperature: {
             duration: pandas.read_excel(
-                os.path.join(DATA_PATH, fname), index_col="Overhang"
+                os.path.join(DATA_PATH, fname), index_col="Overhang", engine="openpyxl"
             )
             for duration, fname in data.items()
         }
