@@ -10,20 +10,22 @@ Tatapov
 
 
 Tatapov is a Python library making accessible and easy to explore the DNA
-overhang misannealing data from Potapov et al. (2018, `bioRxiv <https://www.biorxiv.org/content/early/2018/05/15/322297>`_) and Pryor et al. (2020, `PLoS ONE <https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0238592>`_):
+overhang misannealing data from
+Potapov et al. (2018, `ACS Synth. Biol. <https://pubs.acs.org/doi/10.1021/acssynbio.8b00333>`_)
+and Pryor et al. (2020, `PLoS ONE <https://doi.org/10.1371/journal.pone.0238592>`_):
 
-*Optimization of Golden Gate assembly through application of ligation
-sequence-dependent fidelity and bias profiling.* Vladimir Potapov,
+*Comprehensive Profiling of Four Base Overhang Ligation Fidelity by T4 DNA Ligase and
+Application to DNA Assembly.* Vladimir Potapov,
 Jennifer L. Ong, Rebecca B. Kucera, Bradley W. Langhorst,
 Katharina Bilotti, John M. Pryor, Eric J. Cantor, Barry Canton,
-Thomas F. Knight, Thomas C. Evans Jr., Gregory Lohman. bioRxiv (2018)
-https://doi.org/10.1101/322297
+Thomas F. Knight, Thomas C. Evans Jr., Gregory Lohman.
+ACS Synth. Biol. (2018) 7, 11, 2665–2674.
 
 
 *Enabling one-pot Golden Gate assemblies of unprecedented complexity using
 data-optimized assembly design.* John M. Pryor, Vladimir Potapov,
 Rebecca B. Kucera, Katharina Bilotti, Eric J. Cantor, Gregory J. S. Lohman.
-PLoS ONE (2020) 15(9): e0238592. https://doi.org/10.1371/journal.pone.0238592
+PLoS ONE (2020) 15(9): e0238592.
 
 
 The Supplementary Material of these papers provide tables of inter-overhang
@@ -120,12 +122,6 @@ You can install Tatapov through PIP:
 
     pip install tatapov
 
-Alternatively, you can unzip the sources in a folder and type
-
-.. code::
-
-    python setup.py install
-
 
 License = MIT
 -------------
@@ -133,12 +129,7 @@ License = MIT
 Tatapov is an open-source software originally written at the Edinburgh Genome
 Foundry by `Zulko <https://github.com/Zulko>`_ and
 `released on Github <https://github.com/Edinburgh-Genome-Foundry/tatapov>`_
-under the MIT licence (Copyright 2018 Edinburgh Genome Foundry). Everyone is welcome
-to contribute !
-
-Please contact us if there is any issue regarding copyright (there shouldn't be
-as the repository does not contain any data, and the paper data is free to
-download).
+under the MIT licence (Copyright 2018 Edinburgh Genome Foundry, University of Edinburgh).
 
 
 More biology software
