@@ -6,7 +6,7 @@ authors = [{ name = "Zulko" }]
 description = "Tools for DNA overhang misannealing data."
 readme = "pypi-readme.rst"
 keywords = ["overhang", "golden gate", "DNA", "annealing", "mismatch"]
-dependencies = ["pandas", "appdirs", "flametree", "openpyxl"]
+dependencies = ["pandas", "appdirs", "openpyxl"]
 
 [project.urls]
 Homepage = "https://github.com/Edinburgh-Genome-Foundry/tatapov"

@@ -3,7 +3,6 @@ import urllib.request
 
 import appdirs
 import pandas
-import flametree
 
 DATA_FILES = {
     "25C": {"01h": "FileS1_01h_25C.xlsx", "18h": "FileS3_18h_25C.xlsx"},
