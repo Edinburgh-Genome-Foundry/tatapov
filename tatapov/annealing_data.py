@@ -49,7 +49,8 @@ def download_missing_files():
     for datafile in datafiles_2020:
         if datafile in missing_files:
             urllib.request.urlretrieve(
-                link + datafile + "?raw=true", os.path.join(DATA_PATH, datafile),
+                link + datafile + "?raw=true",
+                os.path.join(DATA_PATH, datafile),
             )  # "?raw=true" ensures retrieving the file rather than the website
             missing_files.remove(datafile)  # loop below goes through all for 2018 data
 
@@ -73,7 +74,8 @@ def download_missing_files():
     for datafile in datafiles_2018:
         if datafile in missing_files:
             urllib.request.urlretrieve(
-                link + datafile + "?raw=true", os.path.join(DATA_PATH, datafile),
+                link + datafile + "?raw=true",
+                os.path.join(DATA_PATH, datafile),
             )
             missing_files.remove(datafile)  # loop below goes through all for 2018 data
 
