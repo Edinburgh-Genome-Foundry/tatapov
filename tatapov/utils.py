@@ -39,21 +39,19 @@ def list_overhangs(standard_overhangs_only=False, non_palyndromic=True):
 
 
 def data_subset(dataframe, overhangs, add_reverse=True):
-    """Restrict a tatapov dataframe to a set of overhangs.
+    """
+    Restrict a Tatapov dataframe to a set of overhangs.
 
     Parameters
     ----------
-
-    dataframe
-      One of the data sheets provided by tatapov, e.g.
-      ``annealing_data["37C"]["01h"]``.
-
-    overhangs
-      list of overhangs
-
-    add_reverse
-      If True (recommended), the reverse-complements of the overhangs in the
-      provided list will also be kept.
+    dataframe : DataFrame
+        One of the data sheets provided by Tatapov, e.g.
+        ``annealing_data["37C"]["01h"]``.
+    overhangs : list
+        List of overhangs.
+    add_reverse : bool
+        If True (recommended), the reverse-complements of the overhangs in the
+        provided list will also be kept.
     """
     overhangs = list(overhangs)
     if add_reverse:
@@ -64,28 +62,25 @@ def data_subset(dataframe, overhangs, add_reverse=True):
 
 
 def plot_data(df, ax=None, colorbar=True, figwidth=None, plot_color="Blues"):
-    """Plot a (restricted) tatapov dataframe. Requires matplotlib installed.
+    """
+    Plot a (restricted) Tatapov dataframe. Requires matplotlib installed.
 
     Parameters
     ----------
-
-    df
-      One of the data sheets provided by tatapov, e.g.
-      ``annealing_data["37C"]["01h"]``. Or a restriction using ``data_subset``.
-
-    ax
-      A Matplotlib ax. If none is provided, one will be created and returned
-      at the end.
-
-    colorbar
-      If True, the figure will have a colorbar.
-
-    figwidth
-      Custom width of the figure (which will be square shaped).
-
-    plot_color
-      A Matplotlib colormap name.
+    df : DataFrame
+        One of the data sheets provided by Tatapov, e.g.
+        ``annealing_data["37C"]["01h"]``. Or a restriction using ``data_subset``.
+    ax : matplotlib.axes.Axes, optional
+        A Matplotlib ax. If none is provided, one will be created and returned
+        at the end.
+    colorbar : bool
+        If True, the figure will have a colorbar.
+    figwidth : float
+        Custom width of the figure (which will be square shaped).
+    plot_color : str
+        A Matplotlib colormap name.
     """
+
     if not MATPLOTLIB_AVAILABLE:
         raise ImportError("Install matplotlib to use this method.")
     if ax is None:

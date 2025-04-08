@@ -16,8 +16,8 @@ Tatapov
    :target: https://coveralls.io/github/Edinburgh-Genome-Foundry/tatapov?branch=master
 
 
-Tatapov is a Python library making accessible and easy to explore the DNA
-overhang misannealing data from
+Tatapov is a Python library (`API reference <https://edinburgh-genome-foundry.github.io/tatapov/>`_)
+making accessible and easy to explore the DNA overhang misannealing data from
 Potapov et al. (2018, `ACS Synth. Biol. <https://pubs.acs.org/doi/10.1021/acssynbio.8b00333>`_)
 and Pryor et al. (2020, `PLoS ONE <https://doi.org/10.1371/journal.pone.0238592>`_):
 
