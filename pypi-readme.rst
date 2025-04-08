@@ -1,14 +1,6 @@
 Tatapov
 -------
 
-.. image:: https://travis-ci.org/Edinburgh-Genome-Foundry/tatapov.svg?branch=master
-   :target: https://travis-ci.org/Edinburgh-Genome-Foundry/tatapov
-   :alt: Travis CI build status
-
-.. image:: https://coveralls.io/repos/github/Edinburgh-Genome-Foundry/tatapov/badge.svg?branch=master
-   :target: https://coveralls.io/github/Edinburgh-Genome-Foundry/tatapov?branch=master
-
-
 Tatapov is a Python library making accessible and easy to explore the DNA
 overhang misannealing data from
 Potapov et al. (2018, `ACS Synth. Biol. <https://pubs.acs.org/doi/10.1021/acssynbio.8b00333>`_)

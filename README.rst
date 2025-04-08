@@ -8,9 +8,9 @@
 Tatapov
 -------
 
-.. image:: https://app.travis-ci.com/Edinburgh-Genome-Foundry/tatapov.svg?branch=master
-    :target: https://app.travis-ci.com/Edinburgh-Genome-Foundry/tatapov
-    :alt: Travis CI build status
+.. image:: https://github.com/Edinburgh-Genome-Foundry/tatapov/actions/workflows/build.yml/badge.svg
+    :target: https://github.com/Edinburgh-Genome-Foundry/tatapov/actions/workflows/build.yml
+    :alt: GitHub CI build status
 
 .. image:: https://coveralls.io/repos/github/Edinburgh-Genome-Foundry/tatapov/badge.svg?branch=master
    :target: https://coveralls.io/github/Edinburgh-Genome-Foundry/tatapov?branch=master
