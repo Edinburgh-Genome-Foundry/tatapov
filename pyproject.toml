@@ -1,6 +1,6 @@
 [project]
 name = "tatapov"
-version = "0.2.3"
+version = "0.2.4"
 license = "MIT"
 authors = [{ name = "Zulko" }]
 description = "Tools for DNA overhang misannealing data."
